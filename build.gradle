@@ -61,13 +61,13 @@ bootRun {
 // enable if you wish to package this plugin as a standalone application
 bootRepackage.enabled = false
 grailsPublish {
-    user = ''
-    key = ''
-    githubSlug = 'jvilaplana/BootstrapForms'
+    user = System.getenv("BINTRAY_USER") ?: ''
+    key = System.getenv("BINTRAY_KEY") ?: ''
+    githubSlug = 'jvilaplana/grails-bootstrap-forms'
     license {
         name = 'MIT'
     }
-    title = "BootstrapForms"
+    title = "bootstrap-forms"
     desc = "Easy form fields generation taglib."
     developers = [jvilaplana: "Jordi Vilaplana"]
 }
