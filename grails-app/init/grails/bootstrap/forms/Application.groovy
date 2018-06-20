@@ -1,4 +1,4 @@
-package bootstrapforms
+package grails.bootstrap.forms
 
 import grails.boot.*
 import grails.boot.config.GrailsAutoConfiguration

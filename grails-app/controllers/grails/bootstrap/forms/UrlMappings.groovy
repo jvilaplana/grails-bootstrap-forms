@@ -1,4 +1,4 @@
-package bootstrapforms
+package grails.bootstrap.forms
 
 class UrlMappings {
 

@@ -2,7 +2,7 @@
 grails:
     profile: web-plugin
     codegen:
-        defaultPackage: bootstrapforms
+        defaultPackage: grails.bootstrap.forms
     gorm:
         reactor:
             # Whether to translate GORM events into Reactor events

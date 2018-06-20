@@ -10,7 +10,7 @@ buildscript {
 }
 
 version "0.1"
-group "bootstrapforms"
+group "grails.bootstrap.forms"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
@@ -67,7 +67,7 @@ grailsPublish {
     license {
         name = 'MIT'
     }
-    title = "bootstrap-forms"
+    title = "grails-bootstrap-forms"
     desc = "Easy form fields generation taglib."
     developers = [jvilaplana: "Jordi Vilaplana"]
 }
