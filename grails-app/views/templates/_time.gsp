@@ -13,7 +13,7 @@
         </g:if>
     </label>
     <div class="input-group">
-        <input type="text" name="${name}" value="${value ? value.format('HH:mm') : ''}" class="form-control timepicker" id="${name}" placeholder="HH:MM" ${required != false ? 'required="required"' : ''} />
+        <input type="text" name="${name}" value="${value ? value.format('HH:mm') : ''}" class="form-control${height ? ' ' + height : ''} timepicker" id="${name}" placeholder="HH:MM" ${required != false ? 'required="required"' : ''} />
     </div>
     <small id="${name}HelpBlock" class="form-text text-muted">
         <g:if test="${helpText}">

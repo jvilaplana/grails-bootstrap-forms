@@ -19,10 +19,10 @@
         <div class="input-group">
     </g:if>
     <g:if test="${required == 'required'}">
-        <g:textArea name="${name}" value="${value}" class="form-control" placeholder="${g.message(code: domain + '.' + name + '.label')}" rows="${rows}" maxlength="${maxlength}" required="required" />
+        <g:textArea name="${name}" value="${value}" class="form-control${height ? ' ' + height : ''}" placeholder="${g.message(code: domain + '.' + name + '.label')}" rows="${rows}" maxlength="${maxlength}" required="required" />
     </g:if>
     <g:else>
-        <g:textArea name="${name}" value="${value}" class="form-control" placeholder="${g.message(code: domain + '.' + name + '.label')}" rows="${rows}" maxlength="${maxlength}"  />
+        <g:textArea name="${name}" value="${value}" class="form-control${height ? ' ' + height : ''}" placeholder="${g.message(code: domain + '.' + name + '.label')}" rows="${rows}" maxlength="${maxlength}"  />
     </g:else>
     <small id="${name}HelpBlock" class="form-text text-muted">
         <g:if test="${helpText}">

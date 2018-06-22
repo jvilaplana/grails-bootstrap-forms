@@ -22,7 +22,7 @@
     <%-- Another workaround is to use it as the "max" attribute --%>
     <%-- More here: http://aruizca.com/how-to-render-json-properly-without-escaping-quotes-inside-a-gsp-script-tag/ --%>
     <g:applyCodec encodeAs="none">
-    <input type="number" step="${step}" ${min ? 'min="' + min + '"' : ''} max="${max ? max : ''}" name="${name}" value="${value}" ${required ? 'required="required"' : ''} class="form-control" id="${name}" placeholder="${message(code: domain + '.' + name + '.placeholder', default: message(code: domain + '.' + name + '.label'))}" />
+    <input type="number" step="${step}" ${min ? 'min="' + min + '"' : ''} max="${max ? max : ''}" name="${name}" value="${value}" ${required ? 'required="required"' : ''} class="form-control${height ? ' ' + height : ''}" id="${name}" placeholder="${message(code: domain + '.' + name + '.placeholder', default: message(code: domain + '.' + name + '.label'))}" />
     </g:applyCodec>
     <g:if test="${addon != null}">
         <div class="input-group-append">

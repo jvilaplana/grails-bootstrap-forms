@@ -13,7 +13,7 @@
         </g:if>
     </label>
     <div class="form-group">
-        <input type="date" name="${name}" value="${value ? value.format('yyyy-MM-dd') : ''}" class="form-control" id="${name}" placeholder="dd/mm/aaaa" ${required != false ? 'required="required"' : ''} />
+        <input type="date" name="${name}" value="${value ? value.format('yyyy-MM-dd') : ''}" class="form-control${height ? ' ' + height : ''}" id="${name}" placeholder="dd/mm/aaaa" ${required != false ? 'required="required"' : ''} />
     </div>
     <small id="${name}HelpBlock" class="form-text text-muted">
         <g:if test="${helpText}">
