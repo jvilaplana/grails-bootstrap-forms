@@ -47,6 +47,12 @@ class BootstrapFormsTagLib implements GrailsApplicationAware {
         attrs.value = attrs.value ?: attrs.bean[attrs.property]
         if (attrs.width == null) attrs.width = 3
 
+        attrs.height = attrs.height ?: grailsApplication?.config?.get('bootstrapForms.defaultHeight')
+
+        if(!attrs.height) attrs.height = ''
+        else if(attrs.height == 'sm') attrs.height = 'form-control-sm'
+        else if(attrs.height == 'lg') attrs.height = 'form-control-lg'
+
         if (!attrs.type) {
             attrs = propertyClassToType(attrs)
         }
