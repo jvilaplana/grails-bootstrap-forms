@@ -2,15 +2,15 @@
     <dl class="animated fadeIn">
         <dt>
             <g:if test="${message(code: domain + '.' + property + '.abbr', default: '') != ''}">
-                <abbr title="${message(code: domain + '.' + property + '.label')}">
+                <abbr title="${message(code: domain + '.' + property + '.label', default: message(code: domainCapitalized + '.' + property + '.label'))}">
                     <g:message code="${domain + '.' + property + '.abbr'}" />
                 </abbr>
             </g:if>
             <g:else>
-                <g:message code="${domain}.${property}.label" />
+                <g:message code="${domain}.${property}.label" default="${message(code: domainCapitalized + '.' + property + '.label')}" />
             </g:else>
         </dt>
-        <dd class="sliding-middle-out ${cssClass}">
+        <dd id="${'show-' + domain + '-' + property}" class="sliding-middle-out${cssClass ? ' ' + cssClass : ''}">
             <g:if test="${pre}"><pre>${raw(value)}</pre></g:if>
             <g:else>
                 <g:if test="${type == 'text'}">

@@ -13,19 +13,21 @@ class BootstrapFormsTagLib implements GrailsApplicationAware {
 
     def showField = { attrs, body ->
         def property = attrs.property
-
-        attrs.domain = attrs.bean.getClass().getSimpleName().uncapitalize()
+        attrs.domainCapitalized = attrs.bean.getClass().getSimpleName()
+        attrs.domain = attrs.domainCapitalized.uncapitalize()
         if (!attrs.value) attrs.value = attrs.bean[attrs.property] != null ? attrs.bean[attrs.property] : '<i class="fas fa-minus" style="color: red;"></i>'
 
         attrs.offset = attrs.offset ? 'col-md-offset-' + attrs.offset : ''
         attrs.pre = attrs.pre ?: false
         if (attrs.width == null) attrs.width = 3
 
+        attrs.show = true
+
         if (!attrs.type) attrs = propertyClassToType(attrs)
 
         if (attrs.prefix && attrs.bean[attrs.property] != null) attrs.value = g.message(code: attrs.prefix + '.' + attrs.value)
         out << g.render(template: "/templates/showField",
-                model: [width: attrs.width, offset: attrs.offset, domain: attrs.domain, property: property,
+                model: [width: attrs.width, offset: attrs.offset, domainCapitalized: attrs.domainCapitalized, domain: attrs.domain, property: property,
                         cssClass: attrs.cssClass, value: attrs.value, addon: attrs.addon, type: attrs.type,
                         offset: attrs.offset, rawValue: attrs.rawValue, link: attrs.link])
     }
@@ -42,8 +44,11 @@ class BootstrapFormsTagLib implements GrailsApplicationAware {
     def formField = { attrs, body ->
         attrs.required = attrs.required ?: false
         attrs.prefix = attrs.prefix ?: null
-        attrs.domain = attrs.bean.getClass().getSimpleName().uncapitalize()
+        attrs.domainCapitalized = attrs.bean.getClass().getSimpleName()
+        attrs.domain = attrs.domainCapitalized.uncapitalize()
+
         attrs.name = attrs.property
+
         attrs.value = attrs.value ?: attrs.bean[attrs.property]
         if (attrs.width == null) attrs.width = 3
 
@@ -124,7 +129,7 @@ class BootstrapFormsTagLib implements GrailsApplicationAware {
             attrs.from = beanClassType.values()
             attrs.noSelection = ['': message(code: 'default.noSelection')]
             def tmp = beanClassType.toString().split('\\.')[-1]
-            attrs.prefix = 'enum.' + tmp.uncapitalize() + '.value'
+            attrs.prefix = attrs.prefix ?: 'enum.' + tmp.uncapitalize() + '.value'
             return attrs
         }
 
@@ -132,8 +137,10 @@ class BootstrapFormsTagLib implements GrailsApplicationAware {
             attrs.type = attrs.type ?: 'select'
             attrs.from = attrs.from ?: beanClassType.list()
             attrs.optionKey = attrs.optionKey ?: 'id'
-            attrs.value = attrs.value ?: attrs.value?.id?.toString()
+            if(attrs.show) attrs.value = attrs.value ?: attrs.value?.id?.toString()
+            else attrs.value = attrs.value?.id?.toString() ?: attrs.value
             attrs.noSelection = attrs.noSelection ?: ['': message(code: 'default.noSelection')]
+
             return attrs
         }
 
