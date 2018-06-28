@@ -47,7 +47,7 @@ class BootstrapFormsTagLib implements GrailsApplicationAware {
         attrs.domainCapitalized = attrs.bean.getClass().getSimpleName()
         attrs.domain = attrs.domainCapitalized.uncapitalize()
 
-        attrs.name = attrs.property
+        attrs.name = attrs.name ?: attrs.property
 
         attrs.value = attrs.value ?: attrs.bean[attrs.property]
         if (attrs.width == null) attrs.width = 3

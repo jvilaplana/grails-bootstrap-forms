@@ -9,7 +9,7 @@ buildscript {
     }
 }
 
-version "0.2.5"
+version "0.2.6"
 group "grails.bootstrap.forms"
 
 apply plugin:"eclipse"

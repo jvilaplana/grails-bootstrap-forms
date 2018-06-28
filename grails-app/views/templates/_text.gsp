@@ -1,12 +1,12 @@
-<div class="form-group form-group-${name} col-md-${width}${cssClass ? ' ' + cssClass : ''}${hidden == 'true' ? ' d-none' : ''}">
+<div class="form-group form-group-${property} col-md-${width}${cssClass ? ' ' + cssClass : ''}${hidden == 'true' ? ' d-none' : ''}">
     <label for="${name}">
-        <g:if test="${message(code: domain + '.' + name + '.abbr', default: '') != ''}">
-            <abbr title="${message(code: domain + '.' + name + '.label', default: message(code: domainCapitalized + '.' + name + '.label'))}">
-                <g:message code="${domain + '.' + name + '.abbr'}" default="${message(code: domainCapitalized + '.' + name + '.abbr')}" />
+        <g:if test="${message(code: domain + '.' + property + '.abbr', default: '') != ''}">
+            <abbr title="${message(code: domain + '.' + property + '.label', default: message(code: domainCapitalized + '.' + property + '.label'))}">
+                <g:message code="${domain + '.' + property + '.abbr'}" default="${message(code: domainCapitalized + '.' + property + '.abbr')}" />
             </abbr>
         </g:if>
         <g:else>
-            <g:message code="${domain + '.' + name + '.label'}" default="${message(code: domainCapitalized + '.' + name + '.label')}" />
+            <g:message code="${domain + '.' + property + '.label'}" default="${message(code: domainCapitalized + '.' + property + '.label')}" />
         </g:else>
         <g:if test="${required != false}">
             <span class="text-danger">*</span>
@@ -15,7 +15,7 @@
     <g:if test="${addon != null}">
         <div class="input-group">
     </g:if>
-    <input type="text" name="${name}" value="${value}" class="form-control${height ? ' ' + height : ''}" id="${name}" placeholder="${message(code: domain + '.' + name + '.label')}" ${required ? 'required=required' : ''} ${maxlength ? 'maxlength=' + maxlength : ''} />
+    <input type="text" name="${name}" value="${value}" class="form-control${height ? ' ' + height : ''}" id="${name}" placeholder="${message(code: domain + '.' + property + '.label')}" ${required ? 'required=required' : ''} ${maxlength ? 'maxlength=' + maxlength : ''} />
     <g:if test="${addon != null}">
         <div class="input-group-append">
             <div class="input-group-text">
@@ -24,7 +24,7 @@
         </div>
         </div>
     </g:if>
-    <small id="${name}HelpBlock" class="form-text text-muted">
+    <small id="${property}HelpBlock" class="form-text text-muted">
         <g:if test="${helpText}">
             ${helpText}
         </g:if>
