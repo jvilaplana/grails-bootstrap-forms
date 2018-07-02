@@ -60,3 +60,16 @@ To render a form field you can use:
 
 
 #### formField attributes
+
+| Attribute | Description |
+| --------- | ----------- |
+| `bean` | Instance |
+| `property` | Property of the `bean` to be rendered |
+| `width` | [Column width](http://getbootstrap.com/docs/4.1/layout/grid/), defaults to `3` |
+| `type` | Type of the property to be rendered. One of `text`, `textarea`, `number`, `date`, `time`, `transient` or `select`. If not specified, the type will be guessed.
+| `addon` | If specified, its value will be appended to the field. |
+| `cssClass` | A CSS class that will be added to the field |
+| `required` | Set its value to `required` to set the field as required. |
+| `height` | Set the [sizing of the field](http://getbootstrap.com/docs/4.1/components/forms/#sizing) to `lg` or `sm`.
+| `rows` | Set the number of rows for fields with `type="textarea"`.
+| `name` | Set the `name` and `id` attributes of the field. Defaults to `property`. |
