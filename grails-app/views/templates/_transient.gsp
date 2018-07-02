@@ -17,7 +17,11 @@
     </g:if>
     <input type="text" name="${name}" value="${value}" class="form-control${height ? ' ' + height : ''}" id="${name}" placeholder="${message(code: domain + '.' + property + '.label')}" ${required ? 'required=required' : ''} ${maxlength ? 'maxlength=' + maxlength : ''} />
     <g:if test="${addon != null}">
-        <div class="input-group-addon">${addon}</div>
+        <div class="input-group-append">
+            <div class="input-group-text">
+                ${raw(addon)}
+            </div>
+        </div>
         </div>
     </g:if>
     <small id="${property}HelpBlock" class="form-text text-muted">

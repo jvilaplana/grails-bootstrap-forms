@@ -13,18 +13,8 @@
         <dd id="${'show-' + domain + '-' + property}" class="sliding-middle-out${cssClass ? ' ' + cssClass : ''}">
             <g:if test="${pre}"><pre>${raw(value)}</pre></g:if>
             <g:else>
-                <g:if test="${type == 'text'}">
-                    ${raw(value)}
-                    <g:if test="${addon != null}">
-                        ${raw(addon)}
-                    </g:if>
-                </g:if>
-                <g:elseif test="${type == 'textarea'}">
-                    ${raw(value.replace('\n', '<br />'))}
-                    <g:if test="${addon != null}">
-                        ${raw(addon)}
-                    </g:if>
-                </g:elseif>
+                <g:if test="${type == 'text'}">${raw(value)}<g:if test="${addon != null}"> ${raw(addon)}</g:if></g:if>
+                <g:elseif test="${type == 'textarea'}">${raw(value.replace('\n', '<br />'))}<g:if test="${addon != null}"> ${raw(addon)}</g:if></g:elseif>
                 <g:elseif test="${type == 'number'}">
                     <g:if test="${rawValue != null && rawValue instanceof Number}">
                         <g:formatNumber number="${rawValue}" maxFractionDigits="2" />
@@ -57,7 +47,7 @@
                 <g:elseif test="${type == 'select'}">
                     <g:if test="${prefix}">
                         <g:if test="${rawValue != null}">
-                            <g:message code="${prefix}.${rawValue}" />
+                            <g:message code="${prefix}.${rawValue}" default="${'<i class="fas fa-minus" style="color: red;"></i>'}" />
                         </g:if>
                         <g:else>
                             ${raw(value)}

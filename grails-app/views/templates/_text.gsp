@@ -15,7 +15,7 @@
     <g:if test="${addon != null}">
         <div class="input-group">
     </g:if>
-    <input type="text" name="${name}" value="${value}" class="form-control${height ? ' ' + height : ''}" id="${name}" placeholder="${message(code: domain + '.' + property + '.label')}" ${required ? 'required=required' : ''} ${maxlength ? 'maxlength=' + maxlength : ''} />
+    <input type="text" name="${name}" value="${value}" class="form-control${height ? ' ' + height : ''}" id="${name}" placeholder="${message(code: domain + '.' + property + '.label')}" ${required ? 'required=required' : ''} ${maxlength ? 'maxlength=' + maxlength : ''} tabindex="${tabindex}" />
     <g:if test="${addon != null}">
         <div class="input-group-append">
             <div class="input-group-text">
