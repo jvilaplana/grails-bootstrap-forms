@@ -58,6 +58,7 @@ bootRun {
     String springProfilesActive = 'spring.profiles.active'
     systemProperty springProfilesActive, System.getProperty(springProfilesActive)
 }
+
 // enable if you wish to package this plugin as a standalone application
 bootRepackage.enabled = false
 grailsPublish {
@@ -71,7 +72,6 @@ grailsPublish {
     desc = "Easy form fields generation taglib."
     developers = [jvilaplana: "Jordi Vilaplana"]
 }
-
 
 assets {
     packagePlugin = true
