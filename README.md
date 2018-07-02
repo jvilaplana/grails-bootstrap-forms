@@ -28,6 +28,12 @@ dependencies {
 }
 ```
 
+Add the stylesheet to your project's `application.css` file:
+
+```
+*= require bootstrap-forms
+```
+
 There is a tag to display a field for `show.gsp` views and another one to render form fields.
 
 To show a field you can use:
@@ -37,3 +43,20 @@ To show a field you can use:
 To render a form field you can use:
 
 `<bf:formField bean="${user}" property="username" />`
+
+
+### Documentation
+
+#### showField attributes
+
+| Attribute | Description |
+| --------- | ----------- |
+| `bean` | Instance |
+| `property` | Property of the `bean` to be rendered |
+| `width` | [Column width](http://getbootstrap.com/docs/4.1/layout/grid/), defaults to `3` |
+| `type` | Type of the property to be rendered. One of `text`, `textarea`, `number`, `date`, `time`, `datetime` or `select`. If not specified, the type will be guessed.
+| `addon` | If specified, its value will be appended to the field. |
+| `cssClass` | A CSS class that will be added to the field |
+
+
+#### formField attributes

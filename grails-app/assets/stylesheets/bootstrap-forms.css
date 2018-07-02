@@ -1,0 +1,27 @@
+dl {
+    width: 100%;
+}
+
+dd {
+    border-bottom: 1px dashed #999;
+    width: 100%;
+}
+
+.sliding-middle-out {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0px;
+}
+.sliding-middle-out:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 1px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+.sliding-middle-out:hover:after {
+    width: 100%;
+    background: blue;
+}
