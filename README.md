@@ -5,9 +5,8 @@ A Grails 3 plugin to automatically generate form fields using Bootstrap 4.
 ## Overview
 The grails-bootstrap-forms plugin offers an easy-to-use TagLib to render fields in views.
 
+
 ## Basic usage
-
-
 Add the Bintray repository to your `build.gradle` file:
 
 ```
@@ -73,3 +72,6 @@ To render a form field you can use:
 | `height` | Set the [sizing of the field](http://getbootstrap.com/docs/4.1/components/forms/#sizing) to `lg` or `sm`.
 | `rows` | Set the number of rows for fields with `type="textarea"`.
 | `name` | Set the `name` and `id` attributes of the field. Defaults to `property`. |
+
+
+[ ![Download](https://api.bintray.com/packages/jvilaplana/plugins/grails-bootstrap-forms/images/download.svg) ](https://bintray.com/jvilaplana/plugins/grails-bootstrap-forms/_latestVersion)
