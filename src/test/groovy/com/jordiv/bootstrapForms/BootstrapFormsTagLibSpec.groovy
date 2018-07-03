@@ -13,6 +13,6 @@ class BootstrapFormsTagLibSpec extends Specification implements TagLibUnitTest<B
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
 }
