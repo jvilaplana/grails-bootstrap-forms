@@ -16,7 +16,7 @@
         --%>
     </label>
     <g:if test="${addon != null}">
-        <div class="input-group">
+        <div class="input-group${oHeight ? ' input-group-' + oHeight : ''}">
     </g:if>
     <%-- applyCode prevents double quotes to be rendered as &quot; inside the groovy code (this part: 'min="') --%>
     <%-- Another workaround is to use it as the "max" attribute --%>
