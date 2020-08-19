@@ -23,7 +23,7 @@ Add the dependency to your project's `build.gradle` file:
 ```
 dependencies {
     ...
-    compile 'grails.bootstrap.forms:grails-bootstrap-forms:0.2.9'
+    compile 'grails.bootstrap.forms:grails-bootstrap-forms:0.3.3'
 }
 ```
 
